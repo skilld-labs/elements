@@ -5,6 +5,8 @@ New repo for component based development.
 # workflow.
 ## Add existing component.
 `yarn add @skilld/elements/components/m-block`
+or
+`elements add @skilld/elements/components/m-block` with specific tasks. and keep yarn as package manager.
 
 Command uses postinstall script https://yarnpkg.com/advanced/lifecycle-scripts (with rollup approach of core https://www.drupal.org/project/drupal/issues/3185289 )
 - installs component as node module
@@ -92,3 +94,4 @@ We will create few new packages like in https://github.com/skilld-labs/kaizen/tr
 # Stack.
 - Yarn 2. Better to start with its new nice features.
 - Rollup. In core style.
+- https://www.npmjs.com/package/semver to control versions on components update
