@@ -1,0 +1,20 @@
+{
+  "name": "@skilld/drupal-yaml",
+  "version": "1.0.0",
+  "description": "Drupal theme libraries YAML",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skilld-labs/elements.git"
+  },
+  "author": "Skilld",
+  "bugs": {
+    "url": "https://github.com/skilld-labs/elements/issues"
+  },
+  "homepage": "https://github.com/skilld-labs/elements#readme",
+  "dependencies": {
+    "glob": "^7.1.6",
+    "js-yaml": "^4.0.0",
+    "semver": "^7.3.4"
+  }
+}
