@@ -1,0 +1,7 @@
+:root {
+  --color-m-block-bg: green;
+}
+
+.m-block {
+  font-size: 2rem;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@example/block",
+  "version": "1.0.1",
+  "scripts": {
+    "postinstall": "node -e 'console.log(`postinstall test`)'"
+  }
+}

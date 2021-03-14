@@ -1,0 +1,15 @@
+example_m_block:
+  label: Example M Block
+  version: 1.0.0
+  path: components/example/molecules/block
+  template: m-block
+  library: approach/block
+  default_region: body
+  icon_map:
+    - title
+    - body
+  regions:
+    title:
+      label: Title
+    body:
+      label: Body
