@@ -1,0 +1,7 @@
+:root {
+  --color-m-block-bg: white;
+}
+
+.m-block {
+  background: var(--color-m-block-bg);
+}

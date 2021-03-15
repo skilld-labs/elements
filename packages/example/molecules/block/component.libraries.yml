@@ -1,0 +1,11 @@
+example_m_block:
+  version: 1.0.0
+  css:
+    base:
+      component.css: {}
+    theme:
+      overrides.css: {}
+  js:
+    behaviour.js: {}
+  dependencies:
+    - core/drupal
