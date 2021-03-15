@@ -1,0 +1,7 @@
+:root {
+  --color-a-button-bg: white;
+}
+
+.a-button {
+  background: var(--color-a-button-bg);
+}

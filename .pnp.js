@@ -21,11 +21,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "elements",
         "reference": "workspace:."
+      },
+      {
+        "name": "@skilld/components-postinstall",
+        "reference": "workspace:packages/components-postinstall"
+      },
+      {
+        "name": "drupal-yaml",
+        "reference": "workspace:packages/drupal-yaml"
+      },
+      {
+        "name": "@skilld/elements-controller",
+        "reference": "workspace:packages/elements-controller"
+      },
+      {
+        "name": "@example/button",
+        "reference": "workspace:packages/example/atoms/button"
+      },
+      {
+        "name": "@example/block",
+        "reference": "workspace:packages/example/molecules/block"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
+      ["@example/block", ["workspace:packages/example/molecules/block"]],
+      ["@example/button", ["workspace:packages/example/atoms/button"]],
+      ["@skilld/components-postinstall", ["workspace:packages/components-postinstall"]],
+      ["@skilld/elements-controller", ["workspace:packages/elements-controller"]],
+      ["drupal-yaml", ["workspace:packages/drupal-yaml"]],
       ["elements", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -41,6 +66,93 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
+      ["@example/block", [
+        ["workspace:packages/example/molecules/block", {
+          "packageLocation": "./packages/example/molecules/block/",
+          "packageDependencies": [
+            ["@example/block", "workspace:packages/example/molecules/block"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@example/button", [
+        ["workspace:packages/example/atoms/button", {
+          "packageLocation": "./packages/example/atoms/button/",
+          "packageDependencies": [
+            ["@example/button", "workspace:packages/example/atoms/button"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@skilld/components-postinstall", [
+        ["workspace:packages/components-postinstall", {
+          "packageLocation": "./packages/components-postinstall/",
+          "packageDependencies": [
+            ["@skilld/components-postinstall", "workspace:packages/components-postinstall"],
+            ["glob", "npm:7.1.6"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@skilld/elements-controller", [
+        ["workspace:packages/elements-controller", {
+          "packageLocation": "./packages/elements-controller/",
+          "packageDependencies": [
+            ["@skilld/elements-controller", "workspace:packages/elements-controller"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["argparse", [
+        ["npm:2.0.1", {
+          "packageLocation": "./.yarn/cache/argparse-npm-2.0.1-faff7999e6-160b7a25d2.zip/node_modules/argparse/",
+          "packageDependencies": [
+            ["argparse", "npm:2.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["balanced-match", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/balanced-match-npm-1.0.0-951a2ad706-f515a605fe.zip/node_modules/balanced-match/",
+          "packageDependencies": [
+            ["balanced-match", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["brace-expansion", [
+        ["npm:1.1.11", {
+          "packageLocation": "./.yarn/cache/brace-expansion-npm-1.1.11-fb95eb05ad-4c878e25e4.zip/node_modules/brace-expansion/",
+          "packageDependencies": [
+            ["brace-expansion", "npm:1.1.11"],
+            ["balanced-match", "npm:1.0.0"],
+            ["concat-map", "npm:0.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["concat-map", [
+        ["npm:0.0.1", {
+          "packageLocation": "./.yarn/cache/concat-map-npm-0.0.1-85a921b7ee-554e28d9ee.zip/node_modules/concat-map/",
+          "packageDependencies": [
+            ["concat-map", "npm:0.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["drupal-yaml", [
+        ["workspace:packages/drupal-yaml", {
+          "packageLocation": "./packages/drupal-yaml/",
+          "packageDependencies": [
+            ["drupal-yaml", "workspace:packages/drupal-yaml"],
+            ["glob", "npm:7.1.6"],
+            ["js-yaml", "npm:4.0.0"],
+            ["semver", "npm:7.3.4"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["elements", [
         ["workspace:.", {
           "packageLocation": "./",
@@ -48,6 +160,127 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["elements", "workspace:."]
           ],
           "linkType": "SOFT",
+        }]
+      ]],
+      ["fs.realpath", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/fs.realpath-npm-1.0.0-c8f05d8126-698a91b169.zip/node_modules/fs.realpath/",
+          "packageDependencies": [
+            ["fs.realpath", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["glob", [
+        ["npm:7.1.6", {
+          "packageLocation": "./.yarn/cache/glob-npm-7.1.6-1ce3a5189a-789977b524.zip/node_modules/glob/",
+          "packageDependencies": [
+            ["glob", "npm:7.1.6"],
+            ["fs.realpath", "npm:1.0.0"],
+            ["inflight", "npm:1.0.6"],
+            ["inherits", "npm:2.0.4"],
+            ["minimatch", "npm:3.0.4"],
+            ["once", "npm:1.4.0"],
+            ["path-is-absolute", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["inflight", [
+        ["npm:1.0.6", {
+          "packageLocation": "./.yarn/cache/inflight-npm-1.0.6-ccedb4b908-17c53fc42c.zip/node_modules/inflight/",
+          "packageDependencies": [
+            ["inflight", "npm:1.0.6"],
+            ["once", "npm:1.4.0"],
+            ["wrappy", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["inherits", [
+        ["npm:2.0.4", {
+          "packageLocation": "./.yarn/cache/inherits-npm-2.0.4-c66b3957a0-98426da247.zip/node_modules/inherits/",
+          "packageDependencies": [
+            ["inherits", "npm:2.0.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["js-yaml", [
+        ["npm:4.0.0", {
+          "packageLocation": "./.yarn/cache/js-yaml-npm-4.0.0-3ac8e950bb-ee9b16cdbb.zip/node_modules/js-yaml/",
+          "packageDependencies": [
+            ["js-yaml", "npm:4.0.0"],
+            ["argparse", "npm:2.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["lru-cache", [
+        ["npm:6.0.0", {
+          "packageLocation": "./.yarn/cache/lru-cache-npm-6.0.0-b4c8668fe1-b8b78353d2.zip/node_modules/lru-cache/",
+          "packageDependencies": [
+            ["lru-cache", "npm:6.0.0"],
+            ["yallist", "npm:4.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["minimatch", [
+        ["npm:3.0.4", {
+          "packageLocation": "./.yarn/cache/minimatch-npm-3.0.4-6e76f51c23-47eab92639.zip/node_modules/minimatch/",
+          "packageDependencies": [
+            ["minimatch", "npm:3.0.4"],
+            ["brace-expansion", "npm:1.1.11"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["once", [
+        ["npm:1.4.0", {
+          "packageLocation": "./.yarn/cache/once-npm-1.4.0-ccf03ef07a-57afc24653.zip/node_modules/once/",
+          "packageDependencies": [
+            ["once", "npm:1.4.0"],
+            ["wrappy", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["path-is-absolute", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/path-is-absolute-npm-1.0.1-31bc695ffd-907e1e3e6a.zip/node_modules/path-is-absolute/",
+          "packageDependencies": [
+            ["path-is-absolute", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["semver", [
+        ["npm:7.3.4", {
+          "packageLocation": "./.yarn/cache/semver-npm-7.3.4-4c3baf0ead-f2c7f9aeb9.zip/node_modules/semver/",
+          "packageDependencies": [
+            ["semver", "npm:7.3.4"],
+            ["lru-cache", "npm:6.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["wrappy", [
+        ["npm:1.0.2", {
+          "packageLocation": "./.yarn/cache/wrappy-npm-1.0.2-916de4d4b3-519fcda0fc.zip/node_modules/wrappy/",
+          "packageDependencies": [
+            ["wrappy", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["yallist", [
+        ["npm:4.0.0", {
+          "packageLocation": "./.yarn/cache/yallist-npm-4.0.0-b493d9e907-a2960ef879.zip/node_modules/yallist/",
+          "packageDependencies": [
+            ["yallist", "npm:4.0.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]]
     ]

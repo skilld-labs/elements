@@ -1,3 +1,8 @@
 {
-  "name": "elements"
+  "name": "elements",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/example/*/*"
+  ]
 }

@@ -1,6 +1,5 @@
 example_m_block:
   label: Example M Block
-  version: 1.0.0
   path: components/example/molecules/block
   template: m-block
   library: approach/block

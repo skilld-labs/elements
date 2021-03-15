@@ -1,0 +1,7 @@
+:root {
+  --color-a-button-bg: green;
+}
+
+.a-button {
+  font-size: 2rem;
+}

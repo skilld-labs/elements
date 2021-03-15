@@ -1,5 +1,5 @@
 {
-  "name": "@skilld/drupal-yaml",
+  "name": "drupal-yaml",
   "version": "1.0.0",
   "description": "Drupal theme libraries YAML",
   "main": "index.js",
