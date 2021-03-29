@@ -2,6 +2,6 @@
   "name": "@example/block",
   "version": "0.0.8",
   "scripts": {
-    "postinstall": "node -e 'require(\"./post-install.js\").copyFiles()'"
+    "postinstall": "node post-install.js"
   }
 }

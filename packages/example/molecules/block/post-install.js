@@ -1,42 +1,52 @@
-// this script will be moved to separated package.
-// and serve initial component installation copy.
+// this will be moved to separated package
 
-const { env } = require("process");
-const fs = require('fs/promises')
-const { basename, join } = require('path')
+const { env } = require('process');
+const fs = require('fs/promises');
+const { basename, join } = require('path');
+const { getYaml, writeLibrary } = require('./yaml');
 
-// we need to generate that pathes dynamically from .libraries.yml
-// and use in both postinstall and rollup
+const { name, type, lib } = getYaml('info.yml');
+
+const componentDest = `components/${lib}/${type}/${name}`;
+const overridesDest = `src/css/components/${lib}/${type}/${name}`;
+
 const targets = [
   {
-    src: "./component.libraries.yml",
-    dest: "components/example/molecules/block",
+    src: './behaviour.js',
+    dest: componentDest,
   },
   {
-    src: "./component.layouts.yml",
-    dest: "components/example/molecules/block",
+    src: './component.css',
+    dest: componentDest,
   },
   {
-    src: "./component.css",
-    dest: "components/example/molecules/block",
+    src: './component.html.twig',
+    dest: componentDest,
   },
   {
-    src: "./behaviour.js",
-    dest: "components/example/molecules/block",
+    src: './library.yml',
+    dest: componentDest,
   },
   {
-    src: "./overrides.css",
-    dest: "src/css/components/example/molecules/block",
+    src: './layout.yml',
+    dest: componentDest,
+  },
+  {
+    src: './overrides.css',
+    dest: overridesDest,
+  },
+  {
+    src: './story.stories.js',
+    dest: componentDest,
   },
 ];
 
-const copyFiles = () => {
-  targets.forEach(async target => {
-    await fs.mkdir(join(env.INIT_CWD, target.dest), { recursive: true })
+targets.forEach(async (target) => {
+  await fs.mkdir(join(env.INIT_CWD, target.dest), { recursive: true });
 
-    const destPath = join(env.INIT_CWD, target.dest, basename(target.src))
-    await fs.copyFile(target.src, destPath)
-  })
-};
+  const destPath = join(env.INIT_CWD, target.dest, basename(target.src));
+  await fs.copyFile(target.src, destPath);
+});
 
-module.exports = { copyFiles };
+// not working yet
+writeLibrary();
